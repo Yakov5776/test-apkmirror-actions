@@ -22,7 +22,7 @@ jobs:
         
         
     
-    -   uses: actions/upload-artifact@v3
+    -   uses: actions/upload-artifact@v4
         with:
            name: prod_configuration.json
            path: extracted2/res/raw/prod_configuration.json
