@@ -1,0 +1,20 @@
+name: Call Download APK Workflow
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  call-download-apk:
+    runs-on: ubuntu-latest
+    steps:    
+    -  uses: Yakov5776/gh-apkmirror-dl@main
+       with:
+        org: 'fidelity-investments'
+        repo: 'fidelity-investments'
+    -   uses: actions/upload-artifact@v3
+        with:
+           name: APK
+           path: .
