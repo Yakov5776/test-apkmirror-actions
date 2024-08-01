@@ -9,12 +9,20 @@ on:
 jobs:
   call-download-apk:
     runs-on: ubuntu-latest
+    env:
+     APP_NAME: 'fidelity-investments'
     steps:    
     -  uses: Yakov5776/gh-apkmirror-dl@main
        with:
-        org: 'roblox-corporation'
-        repo: 'roblox'
+        org: ${{ env.APP_NAME }}
+        repo: ${{ env.APP_NAME }}
+    -  run: |
+        unzip "${{ env.APP_NAME }}.apkm" -d extracted/
+        unzip extracted/base.apk -d extracted2/
+        
+        
+    
     -   uses: actions/upload-artifact@v3
         with:
-           name: APK
-           path: .
+           name: prod_configuration.json
+           path: extracted2/res/raw/prod_configuration.json
