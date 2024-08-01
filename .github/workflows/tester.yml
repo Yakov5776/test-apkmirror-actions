@@ -16,13 +16,12 @@ jobs:
        with:
         org: ${{ env.APP_NAME }}
         repo: ${{ env.APP_NAME }}
-    -  run: |
-        unzip "${{ env.APP_NAME }}.apkm" -d extracted/
-        unzip extracted/base.apk -d extracted2/
+        version: '3.96'
+        bundle: false
         
         
     
     -   uses: actions/upload-artifact@v4
         with:
-           name: prod_configuration.json
-           path: extracted2/res/raw/prod_configuration.json
+           name: APK
+           path: .
