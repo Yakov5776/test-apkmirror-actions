@@ -12,7 +12,7 @@ jobs:
     env:
      APP_NAME: 'fidelity-investments'
     steps:    
-    -  uses: Yakov5776/gh-apkmirror-dl@main
+    -  uses: Yakov5776/gh-apkmirror-dl@v1
        with:
         org: ${{ env.APP_NAME }}
         repo: ${{ env.APP_NAME }}
