@@ -12,8 +12,8 @@ jobs:
     steps:    
     -  uses: Yakov5776/gh-apkmirror-dl@main
        with:
-        org: 'fidelity-investments'
-        repo: 'fidelity-investments'
+        org: 'roblox-corporation'
+        repo: 'roblox'
     -   uses: actions/upload-artifact@v3
         with:
            name: APK
